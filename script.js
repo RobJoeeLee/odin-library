@@ -6,12 +6,12 @@ function Book(title, author, pages, read){
     this.author = author;
     this.pages = pages;
     this.read = read;
-}
+};
 
 function addBooksToLibrary(title, author, pages, read){
     const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
-}
+};
 
 function displayBooks(){
     const libraryContainer = document.getElementById("library-container");
@@ -31,6 +31,10 @@ function displayBooks(){
         <button class="toggle-read-button" data-id="${book.id}">Toggle Read</button>
         `;
 
-        libraryContainer.appendChild(bookCard)
+        libraryContainer.appendChild(bookCard);
     })
-}
+};
+
+document.getElementById("new-book-button").addEventListener("click" , () => {
+    document.getElementById("book-form").style.display = "block";
+});
