@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+h1 {
+    color: #333;
+}
+
+#library {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 80%;
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
+.book-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 10px;
+}
+
+.book-card h2 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.book-card p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.remove-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.toggle-read-btn {
+    background: #28a745;
+    color: white;
+}
+
+#book-form {
+    display: none;
+    background: white;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 20px;
+}
+
+input, label {
+    display: block;
+    margin: 10px 0;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#new-book-button {
+    background: #007bff;
+    color: white;
+}
