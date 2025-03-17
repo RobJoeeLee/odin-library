@@ -15,7 +15,7 @@ function addBooksToLibrary(title, author, pages, read){
 
 function displayBooks(){
     const libraryContainer = document.getElementById("library-container");
-    libraryContainer = "";
+    libraryContainer.innerHTML = "";
 
     myLibrary.forEach(book => {
         const bookCard = document.createElement("div");
@@ -38,3 +38,18 @@ function displayBooks(){
 document.getElementById("new-book-button").addEventListener("click" , () => {
     document.getElementById("book-form").style.display = "block";
 });
+
+document.getElementById("book-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const pages = document.getElementById("pages").value;
+    const read = document.getElementById("read").checked;
+
+    addBooksToLibrary(title, author, pages, read);
+    displayBooks()
+
+    this.reset();
+    this.style.display = "none";
+})
