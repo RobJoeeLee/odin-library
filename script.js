@@ -12,3 +12,25 @@ function addBooksToLibrary(title, author, pages, read){
     const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
 }
+
+function displayBooks(){
+    const libraryContainer = document.getElementById("library-container");
+    libraryContainer = "";
+
+    myLibrary.forEach(book => {
+        const bookCard = document.createElement("div");
+        bookCard.classList.add("book-card");
+        bookCard.dataset.id = book.id;
+
+        bookCard.innerHTML = `
+        <h2>${book.title}</h2>
+        <p>Author: ${book.author}</p>
+        <p>Pages: ${book.pages}</p>
+        <p>Read: ${book.read ? "Yes" : "No"}</p>
+        <button class="remove-button" data-id="${book.id}">Remove</button>
+        <button class="toggle-read-button" data-id="${book.id}">Toggle Read</button>
+        `;
+
+        libraryContainer.appendChild(bookCard)
+    })
+}
