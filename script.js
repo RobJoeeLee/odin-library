@@ -64,4 +64,19 @@ document.addEventListener("click" , function (event){
             displayBooks();
         }
     }
+});
+
+Book.prototype.toggleRead = function (){
+    this.read = !this.read;
+}
+
+document.addEventListener("click" , function (event) {
+    if(event.target.classList.contains("toggle-read-button")){
+        const bookId = event.target.dataset.id;
+        const book = myLibrary.find((book) => book.id === bookId)
+        if(book){
+            book.toggleRead();
+            displayBooks();
+        }
+    }
 })
