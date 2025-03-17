@@ -48,8 +48,20 @@ document.getElementById("book-form").addEventListener("submit", function (event)
     const read = document.getElementById("read").checked;
 
     addBooksToLibrary(title, author, pages, read);
-    displayBooks()
+    displayBooks();
 
     this.reset();
     this.style.display = "none";
+})
+
+document.addEventListener("click" , function (event){
+    if(event.target.classList.contains("remove-button")){
+        const bookId = event.target.dataset.id;
+        const bookIndex = myLibrary.findIndex(book => book.id === bookId);
+
+        if(bookIndex !== -1){
+            myLibrary.splice(bookIndex, 1);
+            displayBooks();
+        }
+    }
 })
